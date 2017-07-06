@@ -19,6 +19,7 @@
 		"handlebars": "1.0.9",
 		"coffeekup": "0.3.1",
 		"underscore": "1.4.4",
-		"gaikan": "2.0.0-rc1"
+		"gaikan": "2.0.0-rc1",
+		"templates.js": "0.3.11"
 	}
 }

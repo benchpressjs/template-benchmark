@@ -12,6 +12,7 @@ var hogan = require('./hogan/hogan.js');
 var dust = require('./dust/dust.js');
 var fest = require('./fest/fest.js');
 var dot = require('./dot/dot.js');
+var templatesjs = require('./tjs/t.js');
 var handlebars = require('./handlebars/handlebars.js');
 var coffeekup = require('./coffeekup/coffeekup.js');
 var underscore = require('./underscore/underscore.js');
@@ -70,6 +71,7 @@ var samples = [
 	{ name : 'Dust', sample : dust },
 	{ name : 'Gaikan', sample: gaikan },
 	{ name : 'ECT', sample : ect },
+	{ name : 'templates.js', sample: templatesjs },
 ];
 
 var results = [];
