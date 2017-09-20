@@ -1,0 +1,87 @@
+
+Rendering 100000 templates:
+
+Benchpress.js
+  Escaped   : 1057ms
+  Unescaped : 184ms
+  Total     : 1242ms
+
+templates.js
+  Escaped   : 21985ms
+  Unescaped : 22220ms
+  Total     : 44205ms
+
+ECT
+  Escaped   : 2045ms
+  Unescaped : 47ms
+  Total     : 2092ms
+
+Gaikan
+  Escaped   : 832ms
+  Unescaped : 29ms
+  Total     : 861ms
+
+Dust
+  Escaped   : 2562ms
+  Unescaped : 202ms
+  Total     : 2764ms
+
+Hogan.js
+  Escaped   : 2538ms
+  Unescaped : 187ms
+  Total     : 2725ms
+
+Fest
+  Escaped   : 885ms
+  Unescaped : 115ms
+  Total     : 1000ms
+
+EJS without `with`
+  Escaped   : 3286ms
+  Unescaped : 177ms
+  Total     : 3463ms
+
+doT
+  Escaped   : 1157ms
+  Unescaped : 32ms
+  Total     : 1189ms
+
+Swig
+  Escaped   : 3839ms
+  Unescaped : 78ms
+  Total     : 3917ms
+
+Underscore
+  Escaped   : 1211ms
+  Unescaped : 766ms
+  Total     : 1977ms
+
+Eco
+  Escaped   : 4102ms
+  Unescaped : 328ms
+  Total     : 4430ms
+
+EJS
+  Escaped   : 4435ms
+  Unescaped : 1201ms
+  Total     : 5636ms
+
+Handlebars.js
+  Escaped   : 1164ms
+  Unescaped : 312ms
+  Total     : 1476ms
+
+Jade without `with`
+  Escaped   : 4042ms
+  Unescaped : 814ms
+  Total     : 4857ms
+
+CoffeeKup
+  Escaped   : 1237ms
+  Unescaped : 4307ms
+  Total     : 5543ms
+
+Jade
+  Escaped   : 6733ms
+  Unescaped : 3312ms
+  Total     : 10045ms

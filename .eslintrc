@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": "airbnb-base/legacy",
+  "rules": {
+    "vars-on-top": "off",
+    "func-names": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": "off",
+    "no-mixed-operators": ["error", {
+      "allowSamePrecedence": true
+    }],
+    "no-inner-declarations": "off",
+    "function-paren-newline": "off",
+    "no-path-concat": "off",
+    "no-multi-str": "off"
+  }
+}

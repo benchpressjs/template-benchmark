@@ -15,48 +15,38 @@
 - [Swig](https://github.com/paularmstrong/swig) v0.13.5
 - [Underscore](https://github.com/documentcloud/underscore) v1.4.4 ([website](http://underscorejs.org/))
 - [Gaikan](https://github.com/Deathspike/gaikan) v2.0.0
+- [templates.js](https://github.com/benchpressjs/benchpressjs/tree/templates.js-legacy)
+- [Benchpress](https://github.com/benchpressjs/benchpressjs)
 
-## Results
+## Latest Results
 
-### Linux Ubuntu 12.04, NodeJS 0.10.26 (100.000x)
+### Windows 10 x64, NodeJS 8.0.0 (100 000x)
 
-	Gaikan               ( 2090ms) - fastest
-	ECT                  ( 2334ms) - 12% slower
-	Fest                 ( 2791ms) - 34% slower
-	Dust                 ( 3030ms) - 45% slower
-	doT                  ( 3940ms) - 89% slower
-	Hogan.js             ( 3977ms) - 90% slower
-	EJS without `with`   ( 5190ms) - 148% slower
-	Swig                 ( 5258ms) - 152% slower
-	Underscore           ( 6154ms) - 194% slower
-	Handlebars.js        ( 7255ms) - 247% slower
-	Eco                  ( 8315ms) - 298% slower
-	EJS                  ( 9059ms) - 333% slower
-	Jade without `with`  (10973ms) - 425% slower
-	CoffeeKup            (11062ms) - 429% slower
-	Jade                 (27295ms) - 1206% slower
+|                      |         |           |
+|----------------------|---------|-----------|
+| Gaikan               |   840ms | fastest |
+| Fest                 |   986ms | 17% slower |
+| doT                  |  1199ms | 43% slower |
+| Benchpress.js        |  1239ms | 48% slower |
+| Handlebars.js        |  1486ms | 77% slower |
+| Underscore           |  1974ms | 135% slower |
+| ECT                  |  2096ms | 150% slower |
+| Hogan.js             |  2725ms | 224% slower |
+| Dust                 |  2803ms | 234% slower |
+| EJS without `with`   |  3483ms | 315% slower |
+| Swig                 |  3963ms | 372% slower |
+| Eco                  |  4445ms | 429% slower |
+| Jade without `with`  |  4873ms | 480% slower |
+| CoffeeKup            |  5654ms | 573% slower |
+| EJS                  |  5711ms | 580% slower |
+| Jade                 | 10122ms | 1105% slower |
+| templates.js         | 45268ms | 5291% slower |
 
-### Windows 7 x64 SP1, NodeJS 0.10.26 (100.000x)
+[Full report](reports/report.win32.md)
 
-	Gaikan               ( 2147ms) - fastest
-	Fest                 ( 2535ms) - 18% slower
-	doT                  ( 3524ms) - 64% slower
-	Underscore           ( 5108ms) - 138% slower
-	Handlebars.js        ( 5734ms) - 167% slower
-	ECT                  ( 7223ms) - 236% slower
-	EJS without `with`   ( 8732ms) - 307% slower
-	Dust                 ( 9136ms) - 326% slower
-	Hogan.js             ( 9960ms) - 364% slower
-	Swig                 (10240ms) - 377% slower
-	Eco                  (12292ms) - 473% slower
-	Jade without `with`  (13510ms) - 529% slower
-	EJS                  (14917ms) - 595% slower
-	CoffeeKup            (15319ms) - 614% slower
-	Jade                 (34000ms) - 1484% slower
-	
 ## Usage
 
-	git clone git://github.com/Deathspike/template-benchmark.git
-	cd template-benchmark
-	npm install
-	node ./benchmark.js
+  git clone git://github.com/benchpressjs/template-benchmark.git
+  cd template-benchmark
+  npm install
+  npm start

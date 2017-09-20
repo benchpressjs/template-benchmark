@@ -1,6 +1,11 @@
-var data = require('./data');
+'use strict';
 
+var fs = require('fs');
+var path = require('path');
+
+var data = require('./data');
 var count = 100000;
+
 var ect = require('./ect/ect.js');
 var ejs = require('./ejs/ejs.js');
 var ejsWithoutWith = require('./ejs-without-with/ejs.js');
@@ -19,117 +24,174 @@ var underscore = require('./underscore/underscore.js');
 var gaikan = require('./gaikan/gaikan.js');
 var benchpress = require('./benchpress/benchpress.js');
 
-var test = function(name, sample, cb) {
-	var i = 0;
-	var start;
-	var done = function(error, html) {
-		i++;
-		if (i === count) {
-			var diff = process.hrtime(start);
-			cb(null, name, diff);
-		}
-	}
-	sample.prepare(data, function() {
-		start = process.hrtime();
-		for (var j = 0; j < count; j++) {
-			sample.step(done);
-		}
-	});
-};
+function noop() {}
 
-var testUnescaped = function(name, sample, cb) {
-	var i = 0;
-	var start;
-	var done = function(error, html) {
-		i++;
-		if (i === count) {
-			var diff = process.hrtime(start);
-			cb(null, name, diff);
-		}
-	}
-	sample.prepareUnescaped(data, function() {
-		start = process.hrtime();
-		for (var j = 0; j < count; j++) {
-			sample.step(done);
-		}
-	});
-};
+function test(name, sample, cb) {
+  var callback = cb;
+  var i = 0;
+  var start;
+
+  function done(error /* , html */) {
+    if (error) {
+      callback(error);
+      callback = noop;
+      return;
+    }
+    i += 1;
+    if (i === count) {
+      var diff = process.hrtime(start);
+      callback(null, name, diff);
+    }
+  }
+
+  sample.prepare(data, function () {
+    start = process.hrtime();
+    for (var j = 0; j < count; j += 1) {
+      sample.step(done);
+    }
+  });
+}
+
+function testUnescaped(name, sample, cb) {
+  var callback = cb;
+  var i = 0;
+  var start;
+
+  function done(error /* , html */) {
+    if (error) {
+      callback(error);
+      callback = noop;
+      return;
+    }
+    i += 1;
+    if (i === count) {
+      var diff = process.hrtime(start);
+      callback(null, name, diff);
+    }
+  }
+
+  sample.prepareUnescaped(data, function () {
+    start = process.hrtime();
+    for (var j = 0; j < count; j += 1) {
+      sample.step(done);
+    }
+  });
+}
 
 var samples = [
 
-	{ name : 'Jade', sample : jade },
-	{ name : 'CoffeeKup', sample : coffeekup },
-	{ name : 'Jade without `with`', sample : jadeWithoutWith },
-	{ name : 'Handlebars.js', sample : handlebars },
-	{ name : 'EJS', sample : ejs },
-	{ name : 'Eco', sample : eco },
-	{ name : 'Underscore', sample : underscore },
-	{ name : 'Swig', sample : swig },
-	{ name : 'doT', sample : dot },
-	{ name : 'EJS without `with`', sample : ejsWithoutWith },
-	{ name : 'Fest', sample : fest },
-	{ name : 'Hogan.js', sample : hogan },
-	{ name : 'Dust', sample : dust },
-	{ name : 'Gaikan', sample: gaikan },
-	{ name : 'ECT', sample : ect },
-	{ name : 'templates.js', sample : templatesjs },
-	{ name : 'Benchpress.js', sample : benchpress },
+  { name: 'Jade', sample: jade },
+  { name: 'CoffeeKup', sample: coffeekup },
+  { name: 'Jade without `with`', sample: jadeWithoutWith },
+  { name: 'Handlebars.js', sample: handlebars },
+  { name: 'EJS', sample: ejs },
+  { name: 'Eco', sample: eco },
+  { name: 'Underscore', sample: underscore },
+  { name: 'Swig', sample: swig },
+  { name: 'doT', sample: dot },
+  { name: 'EJS without `with`', sample: ejsWithoutWith },
+  { name: 'Fest', sample: fest },
+  { name: 'Hogan.js', sample: hogan },
+  { name: 'Dust', sample: dust },
+  { name: 'Gaikan', sample: gaikan },
+  { name: 'ECT', sample: ect },
+  { name: 'templates.js', sample: templatesjs },
+  { name: 'Benchpress.js', sample: benchpress },
 ];
 
-var results = [];
-var pad = function (val, num, pre) {
-	val = typeof val === 'string' ? val : '' + val;
-	while (val.length < num) val = (pre ? ' ' : '') + val + (pre ? '' : ' ');
-	return val;
-};
-
-function parseTime(hrtime) {
-	return hrtime[0] * 1000 + hrtime[1] / 1e6;
+function pad(val, num, pre) {
+  var value = typeof val === 'string' ? val : '' + val;
+  while (value.length < num) {
+    value = (pre ? ' ' : '') + value + (pre ? '' : ' ');
+  }
+  return value;
 }
 
-var runTests = function () {
-	if (samples.length) {
-		var sample = samples.pop();
-		test(sample.name, sample.sample, function (err, name, result) {
-			testUnescaped(sample.name, sample.sample, function (err, name, resultUnescaped) {
-				var escaped = parseTime(result);
-				var unescaped = parseTime(resultUnescaped);
+function parseTime(hrtime) {
+  return (hrtime[0] * 1000) + (hrtime[1] / 1e6);
+}
 
-				console.log(name);
-				console.log('  Escaped   : ' + escaped.toFixed() + 'ms');
-				console.log('  Unescaped : ' + unescaped.toFixed() + 'ms');
-				console.log('  Total     : ' + (escaped + unescaped).toFixed() + 'ms');
-				console.log('');
-				results.push({
-					name: name,
-					escaped: escaped,
-					unescaped: unescaped,
-					total: escaped + unescaped
-				});
-				runTests();
-			});
-		});
-	} else {
-		console.log('Performance report for ' + count + ' templates (' + process.platform + '):');
-		var props = ['total', 'escaped', 'unescaped'];
-		props.forEach(function (prop) {
-			results.sort(function (a, b) {
-				var x = a[prop];
-				var y = b[prop];
-				return x < y ? -1 : (x > y ? 1 : 0);
-			});
-			console.log('\n' + prop + '\n--------------');
-			var fastest = results[0][prop];
-			for (var i = 0; i < results.length; i += 1) {
-				var result = results[i];
-				var percentage = Math.round((100 / fastest * result[prop]) - 100);
-				console.log(pad(result.name, 20) +
-					' (' + pad(result[prop].toFixed(), 5, true) + 'ms)' +
-					(i == 0 ? ' - fastest' : ' - ' + percentage + '% slower'));
-			}
-		});
-	}
-};
+var reportOutput = '';
+var detailedOutput = '';
 
-console.log('Rendering ' + count + ' templates:\n');
+function report(str) {
+  reportOutput += '\n' + str;
+  console.log(str);
+}
+function detail(str) {
+  detailedOutput += '\n' + str;
+  console.log(str);
+}
+
+function writeReport() {
+  report('\n\n### [See stats by engine](detail.' + process.platform + '.txt)');
+
+  fs.writeFileSync(path.join(__dirname, 'reports', 'report.' + process.platform + '.md'), reportOutput);
+  fs.writeFileSync(path.join(__dirname, 'reports', 'detail.' + process.platform + '.txt'), detailedOutput);
+}
+
+var results = [];
+function runTests() {
+  if (samples.length) {
+    var sample = samples.pop();
+
+    test(sample.name, sample.sample, function (err, name, result) {
+      if (err) {
+        throw err;
+      }
+
+      testUnescaped(sample.name, sample.sample, function (errUn, nameUn, resultUn) {
+        if (err) {
+          throw err;
+        }
+
+        var escaped = parseTime(result);
+        var unescaped = parseTime(resultUn);
+
+        detail(sample.name);
+        detail('  Escaped   : ' + escaped.toFixed() + 'ms');
+        detail('  Unescaped : ' + unescaped.toFixed() + 'ms');
+        detail('  Total     : ' + (escaped + unescaped).toFixed() + 'ms');
+        detail('');
+
+        results.push({
+          name: sample.name,
+          escaped: escaped,
+          unescaped: unescaped,
+          total: escaped + unescaped,
+        });
+
+        runTests();
+      });
+    });
+  } else {
+    report('Performance report for ' + count + ' templates (' + process.platform + ')');
+    report('===========================');
+    ['total', 'escaped', 'unescaped'].forEach(function (prop) {
+      results.sort(function (a, b) {
+        var x = a[prop];
+        var y = b[prop];
+        return x - y;
+      });
+
+      report('\n' + prop + ' duration\n--------------');
+      report('|                      |         |           |');
+      report('|----------------------|---------|-----------|');
+
+      var fastest = results[0][prop];
+      results.forEach(function (result, i) {
+        var percentage = Math.round((100 / fastest * result[prop]) - 100);
+        report(
+          '| ' + pad(result.name, 20) +
+          ' | ' + pad(result[prop].toFixed(), 5, true) + 'ms' +
+          ' | ' + (i === 0 ? 'fastest' : percentage + '% slower') + ' |'
+        );
+      });
+    });
+
+    writeReport();
+  }
+}
+
+detail('Rendering ' + count + ' templates:\n');
 runTests();
