@@ -16,6 +16,7 @@
 - [Gaikan](https://github.com/Deathspike/gaikan)
 - [templates.js](https://github.com/benchpressjs/benchpressjs/tree/templates.js-legacy)
 - [Benchpress](https://github.com/benchpressjs/benchpressjs)
+- [Twig.js](https://github.com/twigjs/twig.js)
 
 ## Latest Results
 
@@ -23,22 +24,23 @@
 
 |                      |         |           |
 |----------------------|---------|-----------|
-| Gaikan               |   858ms | fastest |
-| Fest                 |   999ms | 16% slower |
-| doT                  |  1218ms | 42% slower |
-| EJS without `with`   |  1312ms | 53% slower |
-| Benchpress.js        |  1325ms | 54% slower |
-| Handlebars.js        |  1728ms | 101% slower |
-| ECT                  |  2147ms | 150% slower |
-| Pug without `with`   |  2171ms | 153% slower |
-| Pug                  |  2218ms | 159% slower |
-| Underscore           |  2284ms | 166% slower |
-| Hogan.js             |  2764ms | 222% slower |
-| Dust                 |  3397ms | 296% slower |
-| EJS                  |  4192ms | 389% slower |
-| Eco                  |  4448ms | 419% slower |
-| CoffeeKup            |  5606ms | 554% slower |
-| templates.js         | 44532ms | 5091% slower |
+| Gaikan               |   847ms | fastest |
+| Fest                 |  1004ms | 19% slower |
+| Benchpress.js        |  1169ms | 38% slower |
+| doT                  |  1241ms | 47% slower |
+| EJS without `with`   |  1339ms | 58% slower |
+| Handlebars.js        |  1718ms | 103% slower |
+| ECT                  |  2096ms | 148% slower |
+| Pug without `with`   |  2141ms | 153% slower |
+| Pug                  |  2183ms | 158% slower |
+| Underscore           |  2243ms | 165% slower |
+| Hogan.js             |  2771ms | 227% slower |
+| Dust                 |  3432ms | 305% slower |
+| EJS                  |  4191ms | 395% slower |
+| Eco                  |  4395ms | 419% slower |
+| CoffeeKup            |  5469ms | 546% slower |
+| templates.js         | 43503ms | 5038% slower |
+| Twig.js              | 78224ms | 9139% slower |
 
 [Full report](reports/report.win32.md)
 

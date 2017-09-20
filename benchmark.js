@@ -22,6 +22,7 @@ var coffeekup = require('./coffeekup/coffeekup.js');
 var underscore = require('./underscore/underscore.js');
 var gaikan = require('./gaikan/gaikan.js');
 var benchpress = require('./benchpress/benchpress.js');
+var twig = require('./twig/twig.js');
 
 function noop() {}
 
@@ -95,6 +96,7 @@ var samples = [
   { name: 'ECT', sample: ect },
   { name: 'templates.js', sample: templatesjs },
   { name: 'Benchpress.js', sample: benchpress },
+  { name: 'Twig.js', sample: twig },
 ];
 
 function pad(val, num, pre) {

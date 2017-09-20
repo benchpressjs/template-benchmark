@@ -20,6 +20,7 @@
     "hogan.js": "^3.0.2",
     "pug": "^2.0.0-rc.4",
     "templates.js": "0.3.11",
+    "twig": "^1.10.5",
     "underscore": "^1.8.3"
   },
   "scripts": {

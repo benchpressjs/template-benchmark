@@ -1,82 +1,87 @@
 
 Rendering 100000 templates:
 
+Twig.js
+  Escaped   : 44425ms
+  Unescaped : 33799ms
+  Total     : 78224ms
+
 Benchpress.js
-  Escaped   : 1167ms
-  Unescaped : 159ms
-  Total     : 1325ms
+  Escaped   : 1027ms
+  Unescaped : 141ms
+  Total     : 1169ms
 
 templates.js
-  Escaped   : 21440ms
-  Unescaped : 23092ms
-  Total     : 44532ms
+  Escaped   : 21429ms
+  Unescaped : 22074ms
+  Total     : 43503ms
 
 ECT
-  Escaped   : 2100ms
-  Unescaped : 47ms
-  Total     : 2147ms
+  Escaped   : 2056ms
+  Unescaped : 40ms
+  Total     : 2096ms
 
 Gaikan
-  Escaped   : 825ms
-  Unescaped : 33ms
-  Total     : 858ms
+  Escaped   : 804ms
+  Unescaped : 42ms
+  Total     : 847ms
 
 Dust
-  Escaped   : 2933ms
-  Unescaped : 465ms
-  Total     : 3397ms
+  Escaped   : 2968ms
+  Unescaped : 464ms
+  Total     : 3432ms
 
 Hogan.js
-  Escaped   : 2555ms
-  Unescaped : 209ms
-  Total     : 2764ms
+  Escaped   : 2572ms
+  Unescaped : 198ms
+  Total     : 2771ms
 
 Fest
-  Escaped   : 877ms
-  Unescaped : 122ms
-  Total     : 999ms
+  Escaped   : 886ms
+  Unescaped : 118ms
+  Total     : 1004ms
 
 EJS without `with`
-  Escaped   : 1083ms
-  Unescaped : 229ms
-  Total     : 1312ms
+  Escaped   : 1102ms
+  Unescaped : 237ms
+  Total     : 1339ms
 
 doT
-  Escaped   : 1187ms
-  Unescaped : 31ms
-  Total     : 1218ms
+  Escaped   : 1207ms
+  Unescaped : 34ms
+  Total     : 1241ms
 
 Underscore
-  Escaped   : 1335ms
-  Unescaped : 949ms
-  Total     : 2284ms
+  Escaped   : 1307ms
+  Unescaped : 937ms
+  Total     : 2243ms
 
 Eco
-  Escaped   : 4127ms
-  Unescaped : 321ms
-  Total     : 4448ms
+  Escaped   : 4088ms
+  Unescaped : 307ms
+  Total     : 4395ms
 
 EJS
-  Escaped   : 2628ms
-  Unescaped : 1564ms
-  Total     : 4192ms
+  Escaped   : 2666ms
+  Unescaped : 1526ms
+  Total     : 4191ms
 
 Handlebars.js
-  Escaped   : 1285ms
-  Unescaped : 443ms
-  Total     : 1728ms
+  Escaped   : 1274ms
+  Unescaped : 444ms
+  Total     : 1718ms
 
 CoffeeKup
-  Escaped   : 1230ms
-  Unescaped : 4376ms
-  Total     : 5606ms
+  Escaped   : 1188ms
+  Unescaped : 4281ms
+  Total     : 5469ms
 
 Pug without `with`
-  Escaped   : 2138ms
-  Unescaped : 33ms
-  Total     : 2171ms
+  Escaped   : 2109ms
+  Unescaped : 32ms
+  Total     : 2141ms
 
 Pug
-  Escaped   : 2171ms
+  Escaped   : 2136ms
   Unescaped : 47ms
-  Total     : 2218ms
+  Total     : 2183ms
