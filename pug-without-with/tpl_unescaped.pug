@@ -4,7 +4,7 @@ html
 	body
 		p!= self.text
 		- if (self.projects.length)
-			- each project in self.projects
+			each project in self.projects
 				a(href!="#{project.url}")!= project.name
 				p!= project.description
 		- else

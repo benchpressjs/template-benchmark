@@ -1,10 +1,10 @@
 html
 	head
-		title= self.title
+		title= title
 	body
-		p= self.text
-		- if (self.projects.length)
-			- each project in self.projects
+		p= text
+		- if (projects.length)
+			each project in projects
 				a(href="#{project.url}")= project.name
 				p= project.description
 		- else

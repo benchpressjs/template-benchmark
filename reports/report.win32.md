@@ -6,67 +6,64 @@ total duration
 --------------
 |                      |         |           |
 |----------------------|---------|-----------|
-| Gaikan               |   861ms | fastest |
-| Fest                 |  1000ms | 16% slower |
-| doT                  |  1189ms | 38% slower |
-| Benchpress.js        |  1242ms | 44% slower |
-| Handlebars.js        |  1476ms | 71% slower |
-| Underscore           |  1977ms | 130% slower |
-| ECT                  |  2092ms | 143% slower |
-| Hogan.js             |  2725ms | 216% slower |
-| Dust                 |  2764ms | 221% slower |
-| EJS without `with`   |  3463ms | 302% slower |
-| Swig                 |  3917ms | 355% slower |
-| Eco                  |  4430ms | 414% slower |
-| Jade without `with`  |  4857ms | 464% slower |
-| CoffeeKup            |  5543ms | 544% slower |
-| EJS                  |  5636ms | 554% slower |
-| Jade                 | 10045ms | 1067% slower |
-| templates.js         | 44205ms | 5034% slower |
+| Gaikan               |   858ms | fastest |
+| Fest                 |   999ms | 16% slower |
+| doT                  |  1218ms | 42% slower |
+| EJS without `with`   |  1312ms | 53% slower |
+| Benchpress.js        |  1325ms | 54% slower |
+| Handlebars.js        |  1728ms | 101% slower |
+| ECT                  |  2147ms | 150% slower |
+| Pug without `with`   |  2171ms | 153% slower |
+| Pug                  |  2218ms | 159% slower |
+| Underscore           |  2284ms | 166% slower |
+| Hogan.js             |  2764ms | 222% slower |
+| Dust                 |  3397ms | 296% slower |
+| EJS                  |  4192ms | 389% slower |
+| Eco                  |  4448ms | 419% slower |
+| CoffeeKup            |  5606ms | 554% slower |
+| templates.js         | 44532ms | 5091% slower |
 
 escaped duration
 --------------
 |                      |         |           |
 |----------------------|---------|-----------|
-| Gaikan               |   832ms | fastest |
-| Fest                 |   885ms | 6% slower |
-| Benchpress.js        |  1057ms | 27% slower |
-| doT                  |  1157ms | 39% slower |
-| Handlebars.js        |  1164ms | 40% slower |
-| Underscore           |  1211ms | 46% slower |
-| CoffeeKup            |  1237ms | 49% slower |
-| ECT                  |  2045ms | 146% slower |
-| Hogan.js             |  2538ms | 205% slower |
-| Dust                 |  2562ms | 208% slower |
-| EJS without `with`   |  3286ms | 295% slower |
-| Swig                 |  3839ms | 361% slower |
-| Jade without `with`  |  4042ms | 386% slower |
-| Eco                  |  4102ms | 393% slower |
-| EJS                  |  4435ms | 433% slower |
-| Jade                 |  6733ms | 709% slower |
-| templates.js         | 21985ms | 2542% slower |
+| Gaikan               |   825ms | fastest |
+| Fest                 |   877ms | 6% slower |
+| EJS without `with`   |  1083ms | 31% slower |
+| Benchpress.js        |  1167ms | 41% slower |
+| doT                  |  1187ms | 44% slower |
+| CoffeeKup            |  1230ms | 49% slower |
+| Handlebars.js        |  1285ms | 56% slower |
+| Underscore           |  1335ms | 62% slower |
+| ECT                  |  2100ms | 155% slower |
+| Pug without `with`   |  2138ms | 159% slower |
+| Pug                  |  2171ms | 163% slower |
+| Hogan.js             |  2555ms | 210% slower |
+| EJS                  |  2628ms | 219% slower |
+| Dust                 |  2933ms | 256% slower |
+| Eco                  |  4127ms | 400% slower |
+| templates.js         | 21440ms | 2500% slower |
 
 unescaped duration
 --------------
 |                      |         |           |
 |----------------------|---------|-----------|
-| Gaikan               |    29ms | fastest |
-| doT                  |    32ms | 10% slower |
-| ECT                  |    47ms | 62% slower |
-| Swig                 |    78ms | 168% slower |
-| Fest                 |   115ms | 298% slower |
-| EJS without `with`   |   177ms | 510% slower |
-| Benchpress.js        |   184ms | 536% slower |
-| Hogan.js             |   187ms | 545% slower |
-| Dust                 |   202ms | 599% slower |
-| Handlebars.js        |   312ms | 977% slower |
-| Eco                  |   328ms | 1032% slower |
-| Underscore           |   766ms | 2547% slower |
-| Jade without `with`  |   814ms | 2713% slower |
-| EJS                  |  1201ms | 4048% slower |
-| Jade                 |  3312ms | 11343% slower |
-| CoffeeKup            |  4307ms | 14778% slower |
-| templates.js         | 22220ms | 76664% slower |
+| doT                  |    31ms | fastest |
+| Pug without `with`   |    33ms | 5% slower |
+| Gaikan               |    33ms | 7% slower |
+| Pug                  |    47ms | 50% slower |
+| ECT                  |    47ms | 52% slower |
+| Fest                 |   122ms | 290% slower |
+| Benchpress.js        |   159ms | 409% slower |
+| Hogan.js             |   209ms | 571% slower |
+| EJS without `with`   |   229ms | 636% slower |
+| Eco                  |   321ms | 930% slower |
+| Handlebars.js        |   443ms | 1322% slower |
+| Dust                 |   465ms | 1391% slower |
+| Underscore           |   949ms | 2946% slower |
+| EJS                  |  1564ms | 4918% slower |
+| CoffeeKup            |  4376ms | 13941% slower |
+| templates.js         | 23092ms | 73995% slower |
 
 
 ### [See stats by engine](detail.win32.txt)

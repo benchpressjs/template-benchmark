@@ -2,86 +2,81 @@
 Rendering 100000 templates:
 
 Benchpress.js
-  Escaped   : 1057ms
-  Unescaped : 184ms
-  Total     : 1242ms
+  Escaped   : 1167ms
+  Unescaped : 159ms
+  Total     : 1325ms
 
 templates.js
-  Escaped   : 21985ms
-  Unescaped : 22220ms
-  Total     : 44205ms
+  Escaped   : 21440ms
+  Unescaped : 23092ms
+  Total     : 44532ms
 
 ECT
-  Escaped   : 2045ms
+  Escaped   : 2100ms
   Unescaped : 47ms
-  Total     : 2092ms
+  Total     : 2147ms
 
 Gaikan
-  Escaped   : 832ms
-  Unescaped : 29ms
-  Total     : 861ms
+  Escaped   : 825ms
+  Unescaped : 33ms
+  Total     : 858ms
 
 Dust
-  Escaped   : 2562ms
-  Unescaped : 202ms
-  Total     : 2764ms
+  Escaped   : 2933ms
+  Unescaped : 465ms
+  Total     : 3397ms
 
 Hogan.js
-  Escaped   : 2538ms
-  Unescaped : 187ms
-  Total     : 2725ms
+  Escaped   : 2555ms
+  Unescaped : 209ms
+  Total     : 2764ms
 
 Fest
-  Escaped   : 885ms
-  Unescaped : 115ms
-  Total     : 1000ms
+  Escaped   : 877ms
+  Unescaped : 122ms
+  Total     : 999ms
 
 EJS without `with`
-  Escaped   : 3286ms
-  Unescaped : 177ms
-  Total     : 3463ms
+  Escaped   : 1083ms
+  Unescaped : 229ms
+  Total     : 1312ms
 
 doT
-  Escaped   : 1157ms
-  Unescaped : 32ms
-  Total     : 1189ms
-
-Swig
-  Escaped   : 3839ms
-  Unescaped : 78ms
-  Total     : 3917ms
+  Escaped   : 1187ms
+  Unescaped : 31ms
+  Total     : 1218ms
 
 Underscore
-  Escaped   : 1211ms
-  Unescaped : 766ms
-  Total     : 1977ms
+  Escaped   : 1335ms
+  Unescaped : 949ms
+  Total     : 2284ms
 
 Eco
-  Escaped   : 4102ms
-  Unescaped : 328ms
-  Total     : 4430ms
+  Escaped   : 4127ms
+  Unescaped : 321ms
+  Total     : 4448ms
 
 EJS
-  Escaped   : 4435ms
-  Unescaped : 1201ms
-  Total     : 5636ms
+  Escaped   : 2628ms
+  Unescaped : 1564ms
+  Total     : 4192ms
 
 Handlebars.js
-  Escaped   : 1164ms
-  Unescaped : 312ms
-  Total     : 1476ms
-
-Jade without `with`
-  Escaped   : 4042ms
-  Unescaped : 814ms
-  Total     : 4857ms
+  Escaped   : 1285ms
+  Unescaped : 443ms
+  Total     : 1728ms
 
 CoffeeKup
-  Escaped   : 1237ms
-  Unescaped : 4307ms
-  Total     : 5543ms
+  Escaped   : 1230ms
+  Unescaped : 4376ms
+  Total     : 5606ms
 
-Jade
-  Escaped   : 6733ms
-  Unescaped : 3312ms
-  Total     : 10045ms
+Pug without `with`
+  Escaped   : 2138ms
+  Unescaped : 33ms
+  Total     : 2171ms
+
+Pug
+  Escaped   : 2171ms
+  Unescaped : 47ms
+  Total     : 2218ms
