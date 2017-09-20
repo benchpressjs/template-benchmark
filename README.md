@@ -46,7 +46,9 @@
 
 ## Usage
 
-  git clone git://github.com/benchpressjs/template-benchmark.git
-  cd template-benchmark
-  npm install
-  npm start
+```
+git clone git://github.com/benchpressjs/template-benchmark.git
+cd template-benchmark
+npm install
+npm start
+```
